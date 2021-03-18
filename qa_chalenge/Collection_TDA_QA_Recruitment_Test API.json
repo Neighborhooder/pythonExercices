@@ -1,0 +1,1011 @@
+{
+	"info": {
+		"_postman_id": "dedd1814-17e2-4630-a266-07bcc84c594c",
+		"name": "TDA QA Recruitment Test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth/login",
+			"item": [
+				{
+					"name": "Login DE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var token = postman.getResponseHeader(\"login-token\");",
+									"",
+									"pm.environment.set(\"loginToken\", token);",
+									"console.log(token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) OS of the device making the request",
+								"key": "device-os",
+								"value": "{{user1DeviceOs}}"
+							},
+							{
+								"description": "(Required) Define locale for language",
+								"key": "app-locale",
+								"value": "{{user1Country}}"
+							},
+							{
+								"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+								"key": "x-api-key",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+								"key": "correlation-id",
+								"value": "someString"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{user1Username}}\",\n    \"password\": \"{{user1Password}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login user with username and password"
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) OS of the device making the request",
+										"key": "device-os",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) Define locale for language",
+										"key": "app-locale",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+										"key": "x-api-key",
+										"value": "<string>"
+									},
+									{
+										"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+										"key": "correlation-id",
+										"value": "<string>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"test\",\n    \"password\": \"test\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) OS of the device making the request",
+										"key": "device-os",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) Define locale for language",
+										"key": "app-locale",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+										"key": "x-api-key",
+										"value": "<string>"
+									},
+									{
+										"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+										"key": "correlation-id",
+										"value": "<string>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"test\",\n    \"password\": \"test\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Login UK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var token = postman.getResponseHeader(\"login-token\");",
+									"",
+									"pm.environment.set(\"loginToken\", token);",
+									"console.log(token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) OS of the device making the request",
+								"key": "device-os",
+								"value": "{{user2DeviceOs}}"
+							},
+							{
+								"description": "(Required) Define locale for language",
+								"key": "app-locale",
+								"value": "{{user2Country}}"
+							},
+							{
+								"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+								"key": "x-api-key",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+								"key": "correlation-id",
+								"value": "string"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/auth/login?bookingRef={{user2BookingRef}}&surname={{user2Surname}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "bookingRef",
+									"value": "{{user2BookingRef}}",
+									"description": "(Required) Reference of the booking"
+								},
+								{
+									"key": "surname",
+									"value": "{{user2Surname}}",
+									"description": "(Required) Surname of the individual who made the booking"
+								}
+							]
+						},
+						"description": "Login user with username and password"
+					},
+					"response": [
+						{
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) OS of the device making the request",
+										"key": "device-os",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) Define locale for language",
+										"key": "app-locale",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+										"key": "x-api-key",
+										"value": "<string>"
+									},
+									{
+										"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+										"key": "correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/auth/login?bookingRef=<string>&surname=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "bookingRef",
+											"value": "<string>"
+										},
+										{
+											"key": "surname",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) OS of the device making the request",
+										"key": "device-os",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) Define locale for language",
+										"key": "app-locale",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+										"key": "x-api-key",
+										"value": "<string>"
+									},
+									{
+										"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+										"key": "correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/auth/login?bookingRef=<string>&surname=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "bookingRef",
+											"value": "<string>"
+										},
+										{
+											"key": "surname",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "v1/bookings",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Booking Info",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) OS of the device making the request",
+										"key": "device-os",
+										"value": "{{user2DeviceOs}}"
+									},
+									{
+										"description": "(Required) Define locale for language",
+										"key": "app-locale",
+										"value": "{{user2Country}}"
+									},
+									{
+										"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+										"key": "x-api-key",
+										"value": "{{apiKey}}"
+									},
+									{
+										"description": "(Required) Authentication token to use in interactions with the API",
+										"key": "login-token",
+										"value": "{{loginToken}}"
+									},
+									{
+										"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+										"key": "correlation-id",
+										"value": "string"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/bookings/{{user2BookingRef}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"bookings",
+										"{{user2BookingRef}}"
+									]
+								},
+								"description": "Info about a specific booking depending on ID"
+							},
+							"response": [
+								{
+									"name": "Unexpected error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) OS of the device making the request",
+												"key": "device-os",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) Define locale for language",
+												"key": "app-locale",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+												"key": "x-api-key",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) Authentication token to use in interactions with the API",
+												"key": "login-token",
+												"value": "<string>"
+											},
+											{
+												"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+												"key": "correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Detailed booking object",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) OS of the device making the request",
+												"key": "device-os",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) Define locale for language",
+												"key": "app-locale",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+												"key": "x-api-key",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) Authentication token to use in interactions with the API",
+												"key": "login-token",
+												"value": "<string>"
+											},
+											{
+												"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+												"key": "correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Weather",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) OS of the device making the request",
+										"key": "device-os",
+										"value": "{{user2DeviceOs}}"
+									},
+									{
+										"description": "(Required) Define locale for language",
+										"key": "app-locale",
+										"value": "{{user2Country}}"
+									},
+									{
+										"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+										"key": "x-api-key",
+										"value": "{{apiKey}}"
+									},
+									{
+										"description": "(Required) Authentication token to use in interactions with the API",
+										"key": "login-token",
+										"value": "{{loginToken}}"
+									},
+									{
+										"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+										"key": "correlation-id",
+										"value": "string"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/bookings/{{user2BookingRef}}/weather",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"bookings",
+										"{{user2BookingRef}}",
+										"weather"
+									]
+								},
+								"description": "Weather in destination depending on bookingRef"
+							},
+							"response": [
+								{
+									"name": "Object containing ifo about all weather for each location",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) OS of the device making the request",
+												"key": "device-os",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) Define locale for language",
+												"key": "app-locale",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+												"key": "x-api-key",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) Authentication token to use in interactions with the API",
+												"key": "login-token",
+												"value": "<string>"
+											},
+											{
+												"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+												"key": "correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings/:id/weather",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings",
+												":id",
+												"weather"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unexpected error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) OS of the device making the request",
+												"key": "device-os",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) Define locale for language",
+												"key": "app-locale",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+												"key": "x-api-key",
+												"value": "<string>"
+											},
+											{
+												"description": "(Required) Authentication token to use in interactions with the API",
+												"key": "login-token",
+												"value": "<string>"
+											},
+											{
+												"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+												"key": "correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/bookings/:id/weather",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"bookings",
+												":id",
+												"weather"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Available bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) OS of the device making the request",
+								"key": "device-os",
+								"value": "{{user2DeviceOs}}"
+							},
+							{
+								"description": "(Required) Define locale for language",
+								"key": "app-locale",
+								"value": "{{user1Country}}"
+							},
+							{
+								"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+								"key": "x-api-key",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "(Required) Authentication token to use in interactions with the API",
+								"key": "login-token",
+								"value": "{{loginToken}}"
+							},
+							{
+								"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+								"key": "correlation-id",
+								"value": "someString"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/v1/bookings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"bookings"
+							]
+						},
+						"description": "List of available bookings"
+					},
+					"response": [
+						{
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) OS of the device making the request",
+										"key": "device-os",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) Define locale for language",
+										"key": "app-locale",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+										"key": "x-api-key",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) Authentication token to use in interactions with the API",
+										"key": "login-token",
+										"value": "<string>"
+									},
+									{
+										"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+										"key": "correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/bookings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"bookings"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bookings object containing all available bookings for the user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) OS of the device making the request",
+										"key": "device-os",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) Define locale for language",
+										"key": "app-locale",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+										"key": "x-api-key",
+										"value": "<string>"
+									},
+									{
+										"description": "(Required) Authentication token to use in interactions with the API",
+										"key": "login-token",
+										"value": "<string>"
+									},
+									{
+										"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+										"key": "correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/bookings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"bookings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-locale",
+						"value": "en_GB"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{apiKey}}"
+					},
+					{
+						"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+						"key": "correlation-id",
+						"value": "string",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/healthcheck",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				},
+				"description": "Get info about the API and current market"
+			},
+			"response": [
+				{
+					"name": "Get info about the API and current market",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Define locale for language",
+								"key": "app-locale",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+								"key": "x-api-key",
+								"value": "<string>"
+							},
+							{
+								"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+								"key": "correlation-id",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/healthcheck",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"healthcheck"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Define locale for language",
+								"key": "app-locale",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) TDA QA Recruitment Test API Key (Use this x-api-key '1b34X9pNjg5lMvRAXLNTS85TQgrzoYLEa3LUQ6Wh')",
+								"key": "x-api-key",
+								"value": "<string>"
+							},
+							{
+								"description": "A string to allow tracking, if passed the endpoint should return it as well with the same value",
+								"key": "correlation-id",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/healthcheck",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"healthcheck"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://4s9rh46bpe.execute-api.eu-central-1.amazonaws.com/test",
+			"type": "string"
+		}
+	]
+}
